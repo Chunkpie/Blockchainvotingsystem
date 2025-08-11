@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,5 +119,47 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Additional styles for blockchain voting system */
+@layer components {
+  .voting-card {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+
+  .candidate-option {
+    @apply cursor-pointer transition-colors duration-200;
+  }
+
+  .candidate-option:hover {
+    @apply bg-accent/50;
+  }
+
+  .progress-step {
+    @apply transition-all duration-300;
+  }
+
+  .blockchain-receipt {
+    @apply font-mono text-sm break-all;
+  }
+
+  .tally-bar {
+    @apply transition-all duration-500 ease-out;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
